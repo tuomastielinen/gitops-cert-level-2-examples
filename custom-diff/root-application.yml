@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: custom-diff-root
+  name: problematic-apps
   namespace: argocd
   # Poistaa lapsisovellukset, kun juuri poistetaan
   finalizers:
