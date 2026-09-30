@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: example03
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/tuomastielinen/gitops-cert-level-2-examples.git
+    targetRevision: HEAD
+    path: ./sync-hooks-waves/03-postsync-cleanup
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: example03
+
+  # Sync policy
+  syncPolicy:
+    automated: {}
